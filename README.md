@@ -1,27 +1,54 @@
 # CustomerSearchApp
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+There are 2 seperate solution are created for this task:
 
-## Code scaffolding
+  1. Front-end in  angluar
+	 * clone the  repository
+	 * run "npm -i"
+   * Run the project: ng serve
+	 * proxy.config.jon has defined api url to enable the cors.  Open project in VSCode & update if required depends on step-2.
+   * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+   * Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ 2. WebApi in .NET WebApi 
+     * Open project in VStudio.
+     * Restore nuget packages and rebuild.
+     * Run the project. 
+     * Run the api on http://localhost:58123 as defined in the  front-end proxy
 
-## Build
+Please note: 
+  1. Since this is sample project,  it does not include validation/authentication 
+  2. ASP.NET webApi has been used to build simple a API instead of nodejs/express
+  3. For testing purpose, ennble CORS  for communication
+  4. For this sample project, build a simple UI defined based on requirement
+  5. MVC pattern & DI are used in both solutions
+  5. Front-end layout was designed for various display device
+ 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Front End:
+  * 3 components  and 2 services are build to support this front-end application
+  * home components is used to display the menu items
+  * search compoents is used to display the UI option to get user input and call the API service to get the data based on input
+  * result compoents is used to display the filter the results based on users info and also maintain all previous search results as well
+  * assumed only policy number and Membership are used to search results 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+API endpoint(s):
 
-## Running end-to-end tests
+1. `GET /Customer?polno={policy number}&custno={customer number}` - finds all customer matching the specified policy number and customer number.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Sample Data Model:
+**Customer:**
+{
+  "id": "1",
+  "firstName": "Winne",
+  "lastName": "Janc",
+  "memberCardNumber": "0473128446",
+  "policyNumber": "1405677686",
+  "dataOfBirth": "26/07/1995"
+}
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+

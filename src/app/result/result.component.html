@@ -1,0 +1,51 @@
+<div class="h1 font col-12 border border-dark text-center text-success ">
+    <strong>{{title}}</strong>
+</div>
+
+
+<div class="container" *ngIf="items.length >0 else noresult">
+    <div class="container border border-primary " *ngFor="let item of items; let count=index;">
+          <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Search Result # {{count+1}}
+                        </button>
+                      </h2>
+    
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                                <div class="row">
+                                  <div class="col"><strong>First name:</strong></div>
+                                  <div class="col">{{item.firstName}}</div>
+                                <div>
+    
+                                <div class="row">
+                                    <div class="col"><strong>Last name:</strong></div>
+                                    <div class="col">{{item.lastName}}</div>
+                                </div>
+    
+                                <div class="row">
+                                  <div class="col"><strong>Date of Birth:</strong> </div>
+                                  <div class="col">{{item.dataOfBirth}}</div>
+                                </div>
+                          </div>
+                      </div>          
+                </div>
+    
+           </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <ng-template #noresult>
+      <div container border border-primary>No Results</div>
+     </ng-template>
+    
+     
+        <div class="container  border-primary " >
+          <button type="button" class="btn btn-primary btn-sm btn-space"  (click)="OnBack($event)">Back</button>
+          <button type="button" class="btn btn-secondary btn-sm"  (click)="OnClear($event)">Clear</button>
+        </div>

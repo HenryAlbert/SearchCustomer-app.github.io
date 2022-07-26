@@ -54,4 +54,7 @@ Sample Data Model:
 
 ![1](https://user-images.githubusercontent.com/20756731/180946087-68d811a5-4d17-46c1-991a-9184579304ae.png)
 
+![2](https://user-images.githubusercontent.com/20756731/180946372-feb924bc-75fb-440f-9dad-09d24b986569.png)
+
+![3](https://user-images.githubusercontent.com/20756731/180946406-792313f4-c7b1-4520-90ab-8e34a9547b9f.png)
 
